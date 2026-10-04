@@ -16,14 +16,39 @@ Objective:
     5. Add  /etc/hosts   "	127.0.0.1   hello-world.info"
 
    Outcomes:
+
+PS C:\Users\ssati\LocalSetup\World-Of-Kubernetes\k8-Ingress-setup> kubectl get pods     
+NAME   READY   STATUS    RESTARTS   AGE
+app1   1/1     Running   0          15h
+app2   1/1     Running   0          15h
+
+PS C:\Users\ssati\LocalSetup\World-Of-Kubernetes\k8-Ingress-setup> kubectl get service  
+NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+app1         ClusterIP   10.110.254.119   <none>        8000/TCP   15h
+app2         ClusterIP   10.96.54.110     <none>        8000/TCP   15h
+kubernetes   ClusterIP   10.96.0.1        <none>        443/TCP    36d
+
+PS C:\Users\ssati\LocalSetup\World-Of-Kubernetes\k8-Ingress-setup> kubectl get ingress                                 
+NAME           CLASS   HOSTS              ADDRESS        PORTS   AGE
+ingress-demo   nginx   hello-world.info   192.168.49.2   80      15h
+PS C:\Users\ssati\LocalSetup\World-Of-Kubernetes\k8-Ingress-setup> 
+
+PS C:\Users\ssati\LocalSetup\World-Of-Kubernetes\k8-Ingress-setup> kubectl get endpoints
+Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice
+NAME         ENDPOINTS           AGE
+app1         10.244.0.19:8000    15h
+app2         10.244.0.20:8000    15h
+kubernetes   192.168.49.2:8443   36d
+PS C:\Users\ssati\LocalSetup\World-Of-Kubernetes\k8-Ingress-setup> 
+
+<img width="725" height="462" alt="image" src="https://github.com/user-attachments/assets/4bfb36a1-6b08-4234-ba83-84d29ee3fb0d" />
+
+
+
+
+
     
-    <img width="817" height="120" alt="image" src="https://github.com/user-attachments/assets/8cc05f6b-2b43-45fd-85c3-0a3265cf9834" />
-
-    <img width="807" height="140" alt="image" src="https://github.com/user-attachments/assets/bbfe8fed-37b0-42db-ab87-b29b818ee5e6" />
-
-    <img width="832" height="90" alt="image" src="https://github.com/user-attachments/assets/31c253bb-172b-4146-b307-72f32f659c7f" />
-
-    <img width="882" height="130" alt="image" src="https://github.com/user-attachments/assets/f66d65b0-88db-4d96-87a7-3b5ab717caf4" />
+ 
     
 
 
